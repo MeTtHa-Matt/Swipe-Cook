@@ -1,0 +1,35 @@
+{
+  "frais": [
+    "Ail", "Avocat", "Basilic", "Betterave", "Brocoli", "Carotte", "Céleri branche", "Champignon de Paris", "Chou-fleur", "Chou rouge", "Chou vert", "Citron", "Citron vert", "Concombre", "Courgette", "Echalote", "Epinards", "Fenouil", "Haricot vert", "Laitue", "Maïs frais", "Menthe", "Navet", "Oignon", "Oignon rouge", "Persil", "Poireau", "Poivron jaune", "Poivron rouge", "Poivron vert", "Pomme de terre", "Patate douce", "Petits pois frais", "Radis", "Roquette", "Salade mélangée", "Tomate", "Tomates cerises", "Topinambour", "Artichaut", "Asperge", "Endive", "Blette", "Panais", "Gingembre frais"
+  ],
+  "fruits": [
+    "Abricot", "Ananas", "Banane", "Citron", "Citron vert", "Clémentine", "Figue", "Fraise", "Framboise", "Kiwi", "Mangue", "Melon", "Mûre", "Nectarine", "Orange", "Pamplemousse", "Pastèque", "Pêche", "Poire", "Pomme", "Prune", "Raisin", "Noix de coco", "Grenade"
+  ],
+  "viandes et poissons": [
+    "Aiguillettes de poulet", "Bacon", "Boeuf haché", "Côte de porc", "Escalope de poulet", "Filet de boeuf", "Filet de poulet", "Filet de saumon", "Filet de cabillaud", "Jambon blanc", "Jambon cru", "Merguez", "Pavé de thon", "Saucisse", "Steak haché", "Tranches de dinde", "Crevettes", "Moules", "Anchois", "Sardines fraîches"
+  ],
+  "produits laitiers et oeufs": [
+    "Beurre", "Beurre demi-sel", "Crème fraîche", "Crème liquide", "Feta", "Fromage de chèvre", "Gorgonzola", "Gruyère râpé", "Lait", "Lait d'amande", "Lait de coco", "Mascarpone", "Mozzarella", "Parmesan", "Ricotta", "Yaourt grec", "Yaourt nature", "Oeuf", "Oeufs", "Tofu soyeux"
+  ],
+  "bocaux et conserves": [
+    "Artichauts en bocal", "Asperges en bocal", "Aubergines grillées en bocal", "Cornichons", "Câpres", "Champignons en conserve", "Haricots blancs en conserve", "Haricots rouges en conserve", "Maïs en conserve", "Olives noires", "Olives vertes", "Oignons grelots", "Pesto vert en bocal", "Pesto rosso en bocal", "Pois chiches en conserve", "Petits pois en conserve", "Poivrons grillés en bocal", "Ratatouille en conserve", "Sauce tomate en bocal", "Tomates séchées à l'huile", "Tomates concassées en boîte", "Tomates entières en boîte", "Lentilles en conserve", "Haricots verts en conserve", "Thon au naturel en boîte", "Sardines en boîte", "Maquereaux en boîte", "Lait de coco en boîte", "Crème de marrons en bocal", "Compote de pommes en bocal", "Concentré de tomate"
+  ],
+  "épicerie salée": [
+    "Riz basmati", "Riz complet", "Riz arborio", "Riz sauvage", "Quinoa", "Boulgour", "Couscous", "Polenta", "Semoule", "Lentilles vertes", "Lentilles corail", "Pois cassés", "Haricots secs", "Spaghetti", "Penne", "Fusilli", "Tagliatelles", "Nouilles de riz", "Nouilles udon", "Lasagnes", "Farine", "Farine complète", "Chapelure", "Pain de mie", "Tortilla de blé", "Tortilla de maïs", "Mie de pain", "Noix", "Noisettes", "Amandes", "Pignons de pin", "Graines de courge", "Graines de sésame", "Graines de chia", "Beurre de cacahuète"
+  ],
+  "épicerie sucrée": [
+    "Sucre", "Sucre glace", "Cassonade", "Miel", "Sirop d'érable", "Chocolat noir", "Chocolat au lait", "Cacao en poudre", "Vanille", "Extrait de vanille", "Levure chimique", "Bicarbonate", "Gélatine", "Agar-agar", "Noix de coco râpée", "Raisins secs", "Dattes", "Flocons d'avoine", "Corn flakes", "Confiture de fraise", "Pâte à tartiner", "Crème de marrons"
+  ],
+  "huiles sauces et condiments": [
+    "Huile d'olive", "Huile de tournesol", "Huile de colza", "Huile de sésame", "Vinaigre balsamique", "Vinaigre de cidre", "Vinaigre de vin", "Vinaigre de riz", "Moutarde", "Moutarde à l'ancienne", "Mayonnaise", "Ketchup", "Sauce soja", "Sauce teriyaki", "Sauce Worcestershire", "Sauce sriracha", "Tabasco", "Tahini", "Bouillon de légumes", "Bouillon de volaille", "Fond de veau"
+  ],
+  "herbes et épices": [
+    "Sel", "Poivre noir", "Paprika", "Paprika fumé", "Curry", "Cumin", "Coriandre moulue", "Cannelle", "Curcuma", "Piment de Cayenne", "Piment d'Espelette", "Flocons de piment", "Garam masala", "Herbes de Provence", "Origan", "Thym", "Romarin", "Laurier", "Aneth", "Coriandre fraîche", "Persil séché", "Noix de muscade", "Gingembre moulu", "Cardamome", "Clou de girofle", "Safran"
+  ],
+  "surgelés": [
+    "Epinards surgelés", "Petits pois surgelés", "Haricots verts surgelés", "Brocoli surgelé", "Poêlée de légumes", "Mélange de légumes wok", "Frites surgelées", "Fruits rouges surgelés", "Mangue surgelée", "Filets de poisson surgelés", "Crevettes surgelées", "Pizza surgelée", "Pâte feuilletée surgelée", "Pâte brisée surgelée", "Glace vanille", "Sorbet citron"
+  ],
+  "boissons et divers": [
+    "Eau gazeuse", "Bouillon", "Vin blanc", "Vin rouge", "Bière", "Café", "Thé", "Jus d'orange", "Jus de citron", "Glaçons"
+  ]
+}
