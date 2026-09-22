@@ -46,6 +46,49 @@
   $('detail-servings-minus').addEventListener('click', () => { if (state.servings > 1) { state.servings -= 1; renderRecipeDetail(); } }); $('detail-servings-plus').addEventListener('click', () => { if (state.servings < 10) { state.servings += 1; renderRecipeDetail(); } }); $('previous-step').addEventListener('click', () => { if (state.step > 0) { state.step -= 1; renderCook(); } }); $('next-step').addEventListener('click', () => { if (state.step < state.currentRecipe.steps.length - 1) { state.step += 1; renderCook(); } else { toast('Recette terminée. Bon appétit !'); showView('discover-view'); } });
   $('ingredient-search').addEventListener('input', renderSuggestions); $('clear-search').addEventListener('click', () => { $('ingredient-search').value = ''; renderSuggestions(); }); $('shuffle-ingredients').addEventListener('click', () => { ingredients.sort(() => Math.random() - .5); renderSuggestions(); }); $('clear-fridge').addEventListener('click', () => { state.fridge = []; saveFridge(); renderFridge(); applyFilters(); }); $('ingredient-suggestions').addEventListener('click', event => { const button = event.target.closest('[data-ingredient]'); if (!button) return; state.fridge.push(button.dataset.ingredient); saveFridge(); renderFridge(); applyFilters(); toast(`${button.dataset.ingredient} ajouté`); }); $('fridge-list').addEventListener('click', event => { const button = event.target.closest('[data-remove]'); if (!button) return; state.fridge = state.fridge.filter(item => item !== button.dataset.remove); saveFridge(); renderFridge(); applyFilters(); }); $('scan-button').addEventListener('click', openScanner); $('close-scanner').addEventListener('click', closeScanner); $('scanner-modal').addEventListener('click', event => { if (event.target === $('scanner-modal')) closeScanner(); });
   recipeCard.addEventListener('pointerdown', event => { if (event.pointerType === 'mouse' && event.button !== 0) return; state.touch = { x: event.clientX, y: event.clientY }; recipeCard.setPointerCapture(event.pointerId); }); recipeCard.addEventListener('pointermove', event => { if (!state.touch) return; const delta = event.clientX - state.touch.x; if (Math.abs(delta) > 8) { recipeCard.style.transform = `translateX(${delta}px) rotate(${delta / 18}deg)`; recipeCard.classList.toggle('swiping-like', delta > 30); recipeCard.classList.toggle('swiping-nope', delta < -30); } }); recipeCard.addEventListener('pointerup', event => { if (!state.touch) return; const delta = event.clientX - state.touch.x; state.touch = null; if (Math.abs(delta) > 90) animateChoice(delta > 0); else { recipeCard.style = ''; recipeCard.className = 'swipe-card'; } });
-  if ('serviceWorker' in navigator) window.addEventListener('load', async () => { const registrations = await navigator.serviceWorker.getRegistrations(); await Promise.all(registrations.map(registration => registration.unregister())); const cacheNames = await caches.keys(); await Promise.all(cacheNames.map(cacheName => caches.delete(cacheName))); });
+  function registerServiceWorker() {
+    if (!('serviceWorker' in navigator)) return;
+    navigator.serviceWorker.register('./service-worker.js', { scope: './' })
+      .then(() => navigator.serviceWorker.ready)
+      .catch(error => console.warn('Service worker non enregistré:', error));
+  }
+
+  let deferredPrompt = null;
+  const installButton = $('install-button');
+
+  function showInstallButton() {
+    installButton.hidden = false;
+  }
+
+  function hideInstallButton() {
+    installButton.hidden = true;
+  }
+
+  window.addEventListener('beforeinstallprompt', event => {
+    event.preventDefault();
+    deferredPrompt = event;
+    showInstallButton();
+  });
+
+  window.addEventListener('appinstalled', () => {
+    deferredPrompt = null;
+    hideInstallButton();
+    toast('Application installée');
+  });
+
+  installButton.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') {
+      toast('Installation confirmée');
+    } else {
+      toast('Installation annulée');
+    }
+    deferredPrompt = null;
+    hideInstallButton();
+  });
+
+  registerServiceWorker();
   loadIngredients(); loadLocalRecipes(); renderFridge();
 })();
